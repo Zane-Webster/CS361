@@ -1,2 +1,2 @@
 # CS361 Project
-## Caleb Zane Webster
+*Caleb Zane Webster*
