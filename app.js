@@ -21,6 +21,19 @@ app.get("/", (req, res) => {
     });
 });
 
+app.get("/loadouts", (req, res) => {
+    res.render("loadouts", {
+        title: "Loadouts"
+    });
+});
+
+app.get("/loadouts/add", (req, res) => {
+    res.render("add-loadout", {
+        title: "Add Loadout"
+    });
+});
+
+
 // Start server
 app.listen(PORT, () => {
     console.log(`Server running at http://localhost:${PORT}`);
