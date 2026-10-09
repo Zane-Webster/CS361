@@ -1,0 +1,99 @@
+/*==========================
+
+    UNIVERSAL
+
+==========================*/
+
+body {
+    background-color: #333;
+
+    margin: 0;
+    padding: 0;
+
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+
+    font-family:'Courier New', Courier, monospace;
+    color: #ad6;
+}
+
+input, button, select, textarea {
+  font-family: inherit;
+}
+
+/*==========================
+
+    GENERAL
+
+==========================*/
+
+h1 {
+    font-size: 2.5vw;
+}
+
+h2 {
+    font-size: 1.25vw;
+}
+
+p {
+    font-size:  0.8vw;
+}
+
+/*==========================
+
+    INPUT/BUTTONS
+
+==========================*/
+
+button {
+    background-color: #ddd;
+    font-size: 0.8vw;
+}
+
+button:hover {
+    background-color: #bbb;
+}
+
+button:active {
+    background-color: #999;
+}
+
+/*==========================
+
+    NAV
+
+==========================*/
+
+nav {
+    margin: 0;
+    padding: 0;
+    height: 3vh;
+    padding: 15px;
+
+    background-color: #222;
+  
+    display: flex;
+    justify-content: center;
+    gap: 1.5vw;
+}
+
+nav a {
+    text-decoration: none;
+    padding: 0.7vh 1.25vw;
+    border-radius: 100px;
+    
+    font-size: large;
+
+    color: #ddd;
+    background-color: #111;
+}
+
+nav a:hover {
+    color: #fff;
+    background-color: #000;
+}
+
+nav a:active {
+    color: #ad6;
+}
