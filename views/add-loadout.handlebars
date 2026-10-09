@@ -1,5 +1,113 @@
 <h1>ADD A NEW LOADOUT</h1>
 
-<form>
+<form action="/loadouts" method="POST">
+    <!-- 
+    
+    WEAPONS
+    
+    -->
+    <label for="primaryWeapon">Primary Weapon</label>
+    <select name="primaryWeapon" id="primaryWeapon">
+        <option value="" selected>None</option>
+        {{#each primaryWeaponGroups}}
+        <optgroup label="{{role}}">
+            {{#each items}}
+            <option value="{{name}}">{{name}} - ${{cost}}</option>
+            {{/each}}
+        </optgroup>
+        {{/each}}
+    </select>
+
+    <label for="secondaryWeapon">Secondary Weapon</label>
+    <select name="secondaryWeapon" id="secondaryWeapon">
+        <option value="" selected>None</option>
+        {{#each secondaryWeaponGroups}}
+        <optgroup label="{{role}}">
+            {{#each items}}
+            <option value="{{name}}">{{name}} - ${{cost}}</option>
+            {{/each}}
+        </optgroup>
+        {{/each}}
+    </select>
+
+    <!-- 
+    
+    EQUIPMENT
+    
+    -->
+    <label for="equipment">Equipment</label>
+    <select name="equipment" id="equipment">
+        <option value="" selected>None</option>
+        {{#each equipmentGroups}}
+        <optgroup label="{{role}}">
+            {{#each items}}
+            <option value="{{name}}">{{name}} - ${{cost}}</option>
+            {{/each}}
+        </optgroup>
+        {{/each}}
+    </select>
+
+    <!-- 
+    
+    GEAR
+    
+    -->
+    <label for="parachute">Parachute</label>
+    <select name="parachute" id="parachute">
+        <option value="" selected>None</option>
+        {{#each parachutes}}
+        <option value="{{name}}">{{name}} - ${{cost}}</option>
+        {{/each}}
+    </select>
+
+    <label for="helmet">Helmet</label>
+    <select name="helmet" id="helmet">
+        <option value="" selected>None</option>
+        {{#each helmets}}
+        <option value="{{name}}">{{name}} - ${{cost}}</option>
+        {{/each}}
+    </select>
+
+    <label for="armor">Armor</label>
+    <select name="armor" id="armor">
+        <option value="" selected>None</option>
+        {{#each armor}}
+        <option value="{{name}}">{{name}} - ${{cost}}</option>
+        {{/each}}
+    </select>
+    
+    <label for="vest">Vest</label>
+    <select name="vest" id="vest">
+        <option value="" selected>None</option>
+        {{#each vests}}
+        <option value="{{name}}">{{name}} - ${{cost}}</option>
+        {{/each}}
+    </select>
+
+    <label for="backpack">Backpack</label>
+    <select name="backpack" id="backpack">
+        <option value="" selected>None</option>
+        {{#each backpacks}}
+        <option value="{{name}}">{{name}} - ${{cost}}</option>
+        {{/each}}
+    </select>
+
+    <!-- 
+    
+    VEHICLES
+    
+    -->
+    <label for="vehicle">Vehicle</label>
+    <select name="vehicle" id="vehicle">
+        <option value="" selected>None</option>
+        {{#each vehicleGroups}}
+        <optgroup label="{{role}}">
+            {{#each items}}
+            <option value="{{name}}">{{name}} - ${{cost}}</option>
+            {{/each}}
+        </optgroup>
+        {{/each}}
+    </select>
+
     <button type="submit">SUBMIT LOADOUT</button>
 </form>
