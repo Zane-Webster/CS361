@@ -1,0 +1,15 @@
+<label for="{{id}}">{{label}}</label>
+<div class="item-picker">
+    <select id="{{id}}">
+        <option value="">None</option>
+        {{#each groups}}
+        <optgroup label="{{role}}">
+            {{#each items}}
+            <option value="{{name}}">{{name}} - ${{cost}}</option>
+            {{/each}}
+        </optgroup>
+        {{/each}}
+    </select>
+    <button type="button" onclick="addItem('{{id}}', '{{listId}}', '{{inputName}}')">Add</button>
+</div>
+<div id="{{listId}}"></div>

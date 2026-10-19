@@ -1,1 +1,12 @@
 <h1>YOUR LOADOUTS</h1>
+
+<h1>ZeroMQ Test</h1>
+
+<form action="/send-message" method="POST">
+    <button type="submit">Send Message</button>
+</form>
+
+{{#if message}}
+    <p>Sent: {{message}}</p>
+    <p>Reply: {{reply}}</p>
+{{/if}}

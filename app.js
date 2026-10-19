@@ -1,5 +1,6 @@
 const express = require("express");
 const { engine } = require("express-handlebars");
+const zmq = require("zeromq");
 
 const app = express();
 const PORT = 3000;
@@ -17,7 +18,6 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // Helper functions
-
 function groupByRole(items) {
     const groups = {};
 
@@ -37,10 +37,28 @@ function groupByRole(items) {
     });
 }
 
+async function sendMessage(text) {
+    const socket = new zmq.Request();
+
+    socket.connect("tcp://127.0.0.1:5555");
+
+    try {
+        await socket.send(text);
+
+        console.log("Sent:", text);
+
+        const [reply] = await socket.receive();
+
+        return reply.toString();
+    } finally {
+        socket.close();
+    }
+}
+
 // Routes
 app.get("/", (req, res) => {
-    res.render("home", {
-        title: "Home"
+    res.render("loadouts", {
+        title: "Loadouts"
     });
 });
 
@@ -48,6 +66,22 @@ app.get("/loadouts", (req, res) => {
     res.render("loadouts", {
         title: "Loadouts"
     });
+});
+
+app.post("/send-message", async (req, res) => {
+    try {
+        const message = "This is a message from CS361";
+
+        const reply = await sendMessage(message);
+
+        res.render("loadouts", {
+            message: message,
+            reply: reply
+        });
+    } catch (error) {
+        console.error(error);
+        res.status(500).send("Microservice error");
+    }
 });
 
 app.get("/loadouts/add", (req, res) => {
