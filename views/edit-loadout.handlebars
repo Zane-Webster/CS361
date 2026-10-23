@@ -1,0 +1,153 @@
+<script src="/js/tags.js" defer></script>
+
+<form action="/loadouts" method="POST" class="edit-loadout">
+    <!--
+        NAME
+    -->
+    <section id="loadout-name">
+        <input type="text" name="name" placeholder="Enter Loadout Name..." required>
+    </section>
+
+    <!--
+        TAGS
+    -->
+    <section id="loadout-tags">
+        <h2>TAGS</h2>
+
+        <input type="text" id="tag-input" placeholder="Enter Tag...">
+
+        <button type="button" id="add-tag">Add Tag</button>
+
+        <ul id="tag-list"></ul>
+    </section>
+
+    <!--
+        ADD ITEMS
+    -->
+    <section id="add-items">
+        {{> grouped-dropdown-add
+            label="Primary Weapon"
+            id="primaryWeapon"
+            listId="primaryWeaponList"
+            inputName="primaryWeapons"
+            groups=primaryWeaponGroups
+        }}
+
+        {{> grouped-dropdown-add
+            label="Secondary Weapon"
+            id="secondaryWeapon"
+            listId="secondaryWeaponList"
+            inputName="secondaryWeapons"
+            groups=secondaryWeaponGroups
+        }}
+
+        {{> grouped-dropdown-add
+            label="Equipment"
+            id="equipment"
+            listId="equipmentList"
+            inputName="equipment"
+            groups=equipmentGroups
+        }}
+
+        {{> dropdown-add
+            label="Parachute"
+            id="parachute"
+            listId="parachuteList"
+            inputName="parachutes"
+            options=parachutes
+        }}
+
+        {{> dropdown-add
+            label="Helmet"
+            id="helmet"
+            listId="helmetList"
+            inputName="helmets"
+            options=helmets
+        }}
+
+        {{> dropdown-add
+            label="Armor"
+            id="armor"
+            listId="armorList"
+            inputName="armor"
+            options=armor
+        }}
+
+        {{> dropdown-add
+            label="Vest"
+            id="vest"
+            listId="vestList"
+            inputName="vests"
+            options=vests
+        }}
+
+        {{> dropdown-add
+            label="Backpack"
+            id="backpack"
+            listId="backpackList"
+            inputName="backpacks"
+            options=backpacks
+        }}
+
+        {{> grouped-dropdown-add
+            label="Vehicle"
+            id="vehicle"
+            listId="vehicleList"
+            inputName="vehicles"
+            groups=vehicleGroups
+        }}
+    </section>
+
+    <!--
+        SELECTED ITEMS
+    -->
+    <section id="selected-items">
+        <ul id="item-list">
+            <li>TEST</li>
+            <li>TEST</li>
+            <li>TEST</li>
+            <li>TEST</li>
+            <li>TEST</li>
+            <li>TEST</li>
+        </ul>
+    </section>
+
+    <!--
+        PERFORMANCE
+    -->
+    <section id="record-performance">
+        <h1>PERFORMANCE</h1>
+        <label>
+            Kills
+            <input type="number" id="kills-input" name="kills" placeholder="0">
+        </label>
+
+        <label>
+            Assists
+            <input type="number" id="assists-input" name="assists" placeholder="0">
+        </label>
+
+        <label>
+            Downs
+            <input type="number" id="downs-input" name="downs" placeholder="0">
+        </label>
+        
+        <label>
+            Revives
+            <input type="number" id="revives-input" name="revives" placeholder="0">
+        </label>
+
+        <label>
+            Money Earned
+            <input type="number" id="money-earned-input" name="money-earned" placeholder="0">
+        </label>
+
+        <label>
+            Minutes Survived
+            <input type="number" id="mins-survived-input" name="mins-survived" placeholder="0">
+        </label>
+    </section>
+
+    <p>CAUTION: Saving will overwrite all pre-existing loadout information</p>
+    <button type="submit" class="save-loadout">SAVE LOADOUT</button>
+</form>

@@ -40,23 +40,90 @@ p {
     font-size:  0.8vw;
 }
 
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.edit-loadout p {
+    font-size: 0.7vw;
+    position: absolute;
+    bottom: 12vh;
+    right: 2vw;
+}
+
 /*==========================
 
     INPUT/BUTTONS
 
 ==========================*/
 
-.submit-add {
+.save-loadout {
     background-color: #ddd;
-    font-size: 0.8vw;
+    font-size: 2vw;
+
+    position: fixed;
+    bottom: 2vh;
+    right: 1vw;
+
+    width: 30vw;
+    height: 10vh;
 }
 
-.submit-add:hover {
+.save-loadout:hover {
     background-color: #bbb;
 }
 
-.submit-add:active {
+.save-loadout:active {
     background-color: #999;
+}
+
+#loadout-name input {
+    align-items: center;
+    place-content: center;
+    text-align: center;
+
+    font-size: 2vw;
+    color: #ddd;
+
+    background-color: #444;
+
+    border: 5px solid #222; 
+
+    position: fixed;
+    top: 7vh;
+    left: 1vw;
+
+    width: 30vw;
+    height: 10vh;
+}
+
+#loadout-tags {
+    margin: 0;
+    align-items: center;
+    place-content: center;
+    text-align: center;
+
+    font-size: 0.5vw;
+    color: #ddd;
+
+    background-color: #444;
+
+    border: 5px solid #222; 
+
+    position: fixed;
+    top: 7vh;
+    left: 35vw;
+
+    width: 30vw;
+    height: 10vh;
+}
+
+#loadout-tags h2 {
+    color: #ad6;
+    font-size: 1.8vw;
+    margin: 0;
 }
 
 /*==========================
@@ -104,18 +171,98 @@ nav a:active {
 
 ==========================*/
 
-form {
+#add-items {
     display: grid;
     margin: 0;
 
     align-items: center;
     place-content: center;
+
+    background-color: #444;
+
+    border: 5px solid #222; 
+
+    position: fixed;
+    top: 20vh;
+    left: 1vw;
+
+    width: 30vw;
+    height: 75vh;
 }
 
-form label {
-    font-size: 0.8vw;
+#add-items label {
+    font-size: 1.8vw;
 }
 
-form select {
+#add-items select {
     margin-bottom: 2vh;
+    font-size: 0.8vw;
+    width: 92%;
+}
+
+#selected-items {
+    display: grid;
+    margin: 0;
+
+    align-items: center;
+    place-content: center;
+
+    background-color: #444;
+
+    border: 5px solid #222; 
+
+    position: fixed;
+    top: 20vh;
+    left: 35vw;
+
+    width: 30vw;
+    height: 75vh;
+}
+
+#selected-items label {
+    font-size: 1.8vw;
+}
+
+#selected-items select {
+    margin-bottom: 2vh;
+    font-size: 0.8vw;
+    width: 92%;
+}
+
+#record-performance {
+    display: grid;
+    margin: 0;
+
+    align-items: center;
+    place-content: center;
+
+    background-color: #444;
+
+    border: 5px solid #222; 
+
+    position: fixed;
+    top: 7vh;
+    right: 1vw;
+
+    width: 30vw;
+    height: 75vh;
+}
+
+#record-performance h1 {
+    font-size: 3vw;
+}
+
+#record-performance label {
+    font-size: 1.8vw;
+}
+
+#record-performance input {
+    text-align: center;
+    margin-bottom: 2vh;
+    font-size: 1.5vw;
+    width: 92%;
+}
+
+.add-item {
+    font-size: 0.7vw;
 }

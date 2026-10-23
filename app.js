@@ -5,7 +5,14 @@ const zmq = require("zeromq");
 const app = express();
 const PORT = 3000;
 
+const sendRequest = require('./utils/zmq');
+const groupByRole = require('./utils/utils');
+const startMicroservices = require('./utils/start_microservices');
+
 const itemData = require("./data/items");
+
+// Start Microservices
+startMicroservices();
 
 // Handlebars
 app.engine("handlebars", engine());
@@ -16,44 +23,6 @@ app.set("views", "./views");
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-
-// Helper functions
-function groupByRole(items) {
-    const groups = {};
-
-    for (const item of items) {
-        if (!groups[item.role]) {
-            groups[item.role] = [];
-        }
-
-        groups[item.role].push(item);
-    }
-
-    return Object.entries(groups).map(([role, items]) => {
-        return {
-            role: role,
-            items: items
-        };
-    });
-}
-
-async function sendMessage(text) {
-    const socket = new zmq.Request();
-
-    socket.connect("tcp://127.0.0.1:5555");
-
-    try {
-        await socket.send(text);
-
-        console.log("Sent:", text);
-
-        const [reply] = await socket.receive();
-
-        return reply.toString();
-    } finally {
-        socket.close();
-    }
-}
 
 // Routes
 app.get("/", (req, res) => {
@@ -72,11 +41,11 @@ app.post("/send-message", async (req, res) => {
     try {
         const message = "This is a message from CS361";
 
-        const reply = await sendMessage(message);
+        const reply = await sendRequest(JSON.stringify(message), "receiver");
 
         res.render("loadouts", {
             message: message,
-            reply: reply
+            reply: reply.toString()
         });
     } catch (error) {
         console.error(error);
@@ -84,9 +53,9 @@ app.post("/send-message", async (req, res) => {
     }
 });
 
-app.get("/loadouts/add", (req, res) => {
-    res.render("add-loadout", {
-        title: "Add Loadout",
+app.get("/loadouts/edit", (req, res) => {
+    res.render("edit-loadout", {
+        title: "Edit Loadout",
         primaryWeaponGroups: groupByRole(itemData.primaryWeapons),
         secondaryWeaponGroups: groupByRole(itemData.secondaryWeapons),
         equipmentGroups: groupByRole(itemData.equipment),
