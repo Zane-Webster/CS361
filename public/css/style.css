@@ -53,31 +53,78 @@ ul {
     right: 2vw;
 }
 
+#loadouts_header {
+    margin-top: 10vh;
+}
+
 /*==========================
 
-    INPUT/BUTTONS
+    NAV
 
 ==========================*/
 
-.save-loadout {
-    background-color: #ddd;
-    font-size: 2vw;
+nav {
+    position: absolute;
+    width: 100%;
+    height: 3vh;
 
-    position: fixed;
-    bottom: 2vh;
-    right: 1vw;
+    margin: 0;
+    height: 3vh;
+    padding: 15px 0px;
 
-    width: 30vw;
-    height: 10vh;
+    background-color: #222;
+    border-bottom: 5px solid #000;
+  
+    display: flex;
+    justify-content: right;
+    gap: 1.5vw;
 }
 
-.save-loadout:hover {
-    background-color: #bbb;
+nav .nav-button {
+    text-decoration: none;
+    padding: 0.7vh 2.5vw;
+    margin-right: 1.75vw;
+    border-radius: 100px;
+    
+    font-size: large;
+
+    color: #ddd;
+    background-color: #444;
 }
 
-.save-loadout:active {
-    background-color: #999;
+nav .nav-button:hover {
+    color: #fff;
+    background-color: #555;
 }
+
+nav .nav-button:active {
+    color: #ad6;
+}
+
+nav #nav-title {
+    text-decoration: none;
+    color: #ad6;
+
+    position: absolute;
+    font-size: 1.25vw;
+    margin: 0;
+    padding: 0;
+    
+    left: 1.25vw;
+    top: 1.33vh;
+
+    font-weight: bold;
+}
+
+/*==========================
+
+    EDIT LOADOUT PAGE
+
+==========================*/
+
+/*=======================
+    NAME SECTION
+=======================*/
 
 #loadout-name input {
     align-items: center;
@@ -99,11 +146,20 @@ ul {
     height: 10vh;
 }
 
+/*=======================
+    TAGS SECTION
+=======================*/
+
 #loadout-tags {
+    display: flex;
+
     margin: 0;
-    align-items: center;
-    place-content: center;
-    text-align: center;
+    align-items: left;
+    place-content: left;
+    text-align: left;
+
+    padding-left: 1vw;
+    padding-top: 1.8vh;
 
     font-size: 0.5vw;
     color: #ddd;
@@ -116,60 +172,36 @@ ul {
     top: 7vh;
     left: 35vw;
 
-    width: 30vw;
-    height: 10vh;
+    width: 29vw;
+    height: 8.2vh;
 }
 
 #loadout-tags h2 {
     color: #ad6;
     font-size: 1.8vw;
     margin: 0;
+    font-weight: normal;
 }
 
-/*==========================
-
-    NAV
-
-==========================*/
-
-nav {
-    margin: 0;
-    padding: 0;
-    height: 3vh;
-    padding: 15px;
-
-    background-color: #222;
-  
-    display: flex;
-    justify-content: center;
-    gap: 1.5vw;
-}
-
-nav a {
-    text-decoration: none;
-    padding: 0.7vh 1.25vw;
-    border-radius: 100px;
-    
-    font-size: large;
-
-    color: #ddd;
-    background-color: #111;
-}
-
-nav a:hover {
-    color: #fff;
-    background-color: #000;
-}
-
-nav a:active {
+#loadout-tags ul {
+    margin-left: 0.5vw;
     color: #ad6;
+    font-size: 0.75vw;
 }
 
-/*==========================
+#loadout-tags ul li {
+    white-space: nowrap;
+    overflow-wrap: break-word;
+}
 
-    FORM
+#remove-tag {
+    font-size: 0.75vw;
+    margin-left: 1vw;
+}
 
-==========================*/
+/*=======================
+    ADD SECTION
+=======================*/
 
 #add-items {
     display: grid;
@@ -187,7 +219,7 @@ nav a:active {
     left: 1vw;
 
     width: 30vw;
-    height: 75vh;
+    height: 78vh;
 }
 
 #add-items label {
@@ -199,6 +231,14 @@ nav a:active {
     font-size: 0.8vw;
     width: 92%;
 }
+
+.add-item {
+    font-size: 0.7vw;
+}
+
+/*=======================
+    EDIT SECTION
+=======================*/
 
 #selected-items {
     display: grid;
@@ -216,7 +256,7 @@ nav a:active {
     left: 35vw;
 
     width: 30vw;
-    height: 75vh;
+    height: 78vh;
 }
 
 #selected-items label {
@@ -228,6 +268,10 @@ nav a:active {
     font-size: 0.8vw;
     width: 92%;
 }
+
+/*=======================
+    PERFORMANCE SECTION
+=======================*/
 
 #record-performance {
     display: grid;
@@ -250,6 +294,7 @@ nav a:active {
 
 #record-performance h1 {
     font-size: 3vw;
+    font-weight: normal;
 }
 
 #record-performance label {
@@ -263,6 +308,26 @@ nav a:active {
     width: 92%;
 }
 
-.add-item {
-    font-size: 0.7vw;
+/*=======================
+    SAVE BUTTON
+=======================*/
+
+.save-loadout {
+    background-color: #ddd;
+    font-size: 2vw;
+
+    position: fixed;
+    bottom: 2vh;
+    right: 1vw;
+
+    width: 30vw;
+    height: 10vh;
+}
+
+.save-loadout:hover {
+    background-color: #bbb;
+}
+
+.save-loadout:active {
+    background-color: #999;
 }

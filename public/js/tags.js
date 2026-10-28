@@ -6,11 +6,29 @@ function addTag() {
     const tag = tag_input.value.trim();
 
     // dont add empty or duplicate tags
-    if (!tag) return;
+    if (tag == "") {
+        alert("Tag cannot be empty!");
+        return;
+    }
+
+    if (tag.length > 35) {
+        alert("Tag is too long (max 35 chars)!");
+        return;
+    }
 
     const existing_tags = Array.from(
         tag_list.querySelectorAll('input[name="tags[]"]')
     );
+
+    if (existing_tags.length == 3) {
+        alert("You cannot have more than 3 tags!");
+        return;
+    }
+
+    if (existing_tags.some(input => input.value === tag)) {
+        alert("Tag cannot be a duplicate of another tag!");
+        return;
+    }
 
     if (existing_tags.some(input =>
         input.value.toLowerCase() === tag.toLowerCase()

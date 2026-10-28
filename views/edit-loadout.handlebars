@@ -12,13 +12,15 @@
         TAGS
     -->
     <section id="loadout-tags">
-        <h2>TAGS</h2>
+        <div id="loadout-tags-left">
+            <h2>TAGS</h2>
+            <input type="text" id="tag-input" placeholder="Enter Tag...">
+            <button type="button" id="add-tag">+</button>
+        </div>
 
-        <input type="text" id="tag-input" placeholder="Enter Tag...">
-
-        <button type="button" id="add-tag">Add Tag</button>
-
-        <ul id="tag-list"></ul>
+        <div id="loadout-tags-right">
+            <ul id="tag-list"></ul>
+        </div>
     </section>
 
     <!--
@@ -119,35 +121,37 @@
         <h1>PERFORMANCE</h1>
         <label>
             Kills
-            <input type="number" id="kills-input" name="kills" placeholder="0">
+            <input type="number" id="kills-input" name="kills" value="0">
         </label>
 
         <label>
             Assists
-            <input type="number" id="assists-input" name="assists" placeholder="0">
+            <input type="number" id="assists-input" name="assists" value="0">
         </label>
 
         <label>
             Downs
-            <input type="number" id="downs-input" name="downs" placeholder="0">
+            <input type="number" id="downs-input" name="downs" value="0">
         </label>
         
         <label>
             Revives
-            <input type="number" id="revives-input" name="revives" placeholder="0">
+            <input type="number" id="revives-input" name="revives" value="0">
         </label>
 
         <label>
             Money Earned
-            <input type="number" id="money-earned-input" name="money-earned" placeholder="0">
+            <input type="number" id="money-earned-input" name="money-earned" value="0">
         </label>
 
         <label>
             Minutes Survived
-            <input type="number" id="mins-survived-input" name="mins-survived" placeholder="0">
+            <input type="number" id="mins-survived-input" name="mins-survived" value="0">
         </label>
     </section>
 
     <p>CAUTION: Saving will overwrite all pre-existing loadout information</p>
     <button type="submit" class="save-loadout">SAVE LOADOUT</button>
 </form>
+
+<script src="/js/edit-loadout.js" defer></script>
