@@ -257,6 +257,8 @@ nav #nav-title {
 
     width: 30vw;
     height: 78vh;
+
+    font-size: 1.25vw;
 }
 
 #selected-items label {
@@ -267,6 +269,11 @@ nav #nav-title {
     margin-bottom: 2vh;
     font-size: 0.8vw;
     width: 92%;
+}
+
+#selected-items button {
+    margin-left: 0.5vw;
+    font-size: 1.25vw;
 }
 
 /*=======================

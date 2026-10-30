@@ -11,20 +11,28 @@ const startMicroservices = require('./utils/start_microservices');
 
 const itemData = require("./data/items");
 
-// Start Microservices
+/*=======================
+    START MICROSERVICES
+=======================*/
 startMicroservices();
 
-// Handlebars
+/*=======================
+    HANDLEBARS
+=======================*/
 app.engine("handlebars", engine());
 app.set("view engine", "handlebars");
 app.set("views", "./views");
 
-// Middleware
+/*=======================
+    MIDDLEWARE
+=======================*/
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-// Routes
+/*=======================
+    GET ROUTES
+=======================*/
 app.get("/", (req, res) => {
     res.render("loadouts", {
         title: "Loadouts"
@@ -35,22 +43,6 @@ app.get("/loadouts", (req, res) => {
     res.render("loadouts", {
         title: "Loadouts"
     });
-});
-
-app.post("/send-message", async (req, res) => {
-    try {
-        const message = "This is a message from CS361";
-
-        const reply = await sendRequest(JSON.stringify(message), "receiver");
-
-        res.render("loadouts", {
-            message: message,
-            reply: reply.toString()
-        });
-    } catch (error) {
-        console.error(error);
-        res.status(500).send("Microservice error");
-    }
 });
 
 app.get("/loadouts/edit", (req, res) => {
@@ -69,8 +61,23 @@ app.get("/loadouts/edit", (req, res) => {
     });
 });
 
+/*=======================
+    POST ROUTES
+=======================*/
 
-// Start server
+app.post("/loadouts", async (req, res) => {
+    try {
+        
+
+        const reply = await sendRequest(JSON.stringify(message), "receiver");
+    } catch (error) {
+        console.log(error);
+    }
+});
+
+/*=======================
+    START SERVER
+=======================*/
 app.listen(PORT, () => {
     console.log(`Server running at http://localhost:${PORT}`);
 });

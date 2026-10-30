@@ -1,4 +1,6 @@
 <script src="/js/tags.js" defer></script>
+<script src="/js/edit-loadout.js" defer></script>
+<script src="/js/selected-items.js" defer></script>
 
 <form action="/loadouts" method="POST" class="edit-loadout">
     <!--
@@ -104,14 +106,7 @@
         SELECTED ITEMS
     -->
     <section id="selected-items">
-        <ul id="item-list">
-            <li>TEST</li>
-            <li>TEST</li>
-            <li>TEST</li>
-            <li>TEST</li>
-            <li>TEST</li>
-            <li>TEST</li>
-        </ul>
+        <ul id="item-list"></ul>
     </section>
 
     <!--
@@ -153,5 +148,3 @@
     <p>CAUTION: Saving will overwrite all pre-existing loadout information</p>
     <button type="submit" class="save-loadout">SAVE LOADOUT</button>
 </form>
-
-<script src="/js/edit-loadout.js" defer></script>

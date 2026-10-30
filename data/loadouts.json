@@ -1,0 +1,114 @@
+[
+	{
+		"id": "1",
+		"name": "SKS Loadout",
+		"tags": ["Recon"],
+		"items": [
+            {
+                "category": "primaryWeapon",
+                "name": "SKS"
+            },
+            {
+                "category": "equipment",
+                "name": "Range Finder"
+            },
+            {
+                "category": "parachutes",
+                "name": "Basic Parachute"
+            }
+        ],
+		"performance": {
+			"kills": 3,
+			"assists": 12,
+			"downs": 2,
+			"revives": 1,
+			"moneyEarned": 4000,
+			"minutesSurvived": 22
+		},
+		"cost": 2900,
+		"profit": 1100
+	},
+	{
+        "id": "2",
+        "name": "Medic Loadout",
+        "tags": ["Medic"],
+        "items": [
+            {
+                "category": "primaryWeapon",
+                "name": "AMP-9"
+            },
+            {
+                "category": "armor",
+                "name": "Level 2 Armor"
+            },
+            {
+                "category": "helmets",
+                "name": "Level 2 Helmet"
+            },
+            {
+                "category": "parachutes",
+                "name": "Basic Parachute"
+            },
+            {
+                "category": "equipment",
+                "name": "Medical Bag"
+            }
+        ],
+        "performance": {
+            "kills": 1,
+            "assists": 15,
+            "downs": 1,
+            "revives": 9,
+            "moneyEarned": 22000,
+            "minutesSurvived": 40
+        },
+        "cost": 4500,
+        "profit": 17500
+    },
+	{
+		"id": "3",
+		"name": "Helicopter Loadout",
+		"tags": ["Pilot"],
+		"items": [
+            {
+                "category": "vehicles",
+                "name": "AH-6R [Rockets]"
+            }
+        ],
+		"performance": {
+			"kills": 9,
+			"assists": 1,
+			"downs": 1,
+			"revives": 0,
+			"moneyEarned": 12000,
+			"minutesSurvived": 10
+		},
+		"cost": 12500,
+		"profit": -500
+	},
+	{
+		"id": "4",
+		"name": "Scout Loadout",
+		"tags": ["Recon"],
+		"items": [
+            {
+                "category": "equipment",
+                "name": "Range Finder"
+            },
+            {
+                "category": "parachutes",
+                "name": "Basic Parachute"
+            }
+        ],
+		"performance": {
+			"kills": 0,
+			"assists": 22,
+			"downs": 0,
+			"revives": 0,
+			"moneyEarned": 18000,
+			"minutesSurvived": 70
+		},
+		"cost": 500,
+		"profit": 17500
+	}
+]
