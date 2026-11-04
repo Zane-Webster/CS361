@@ -2,10 +2,16 @@ const tag_input = document.getElementById("tag-input");
 const add_tag_button = document.getElementById("add-tag");
 const tag_list = document.getElementById("tag-list");
 
-function addTag() {
-    const tag = tag_input.value.trim();
+tag_list.addEventListener("click", (event) => {
+    if (event.target.id === "remove-tag") {
+        event.target.closest("li").remove();
+    }
+});
 
-    // dont add empty or duplicate tags
+function addTag(value = tag_input.value) {
+    const tag = value.trim();
+
+    // Dont add empty or duplicate tags
     if (tag == "") {
         alert("Tag cannot be empty!");
         return;
@@ -30,10 +36,6 @@ function addTag() {
         return;
     }
 
-    if (existing_tags.some(input =>
-        input.value.toLowerCase() === tag.toLowerCase()
-    )) return;
-
     // Create list item
     const list_item = document.createElement("li");
 
@@ -53,10 +55,6 @@ function addTag() {
     remove_button.textContent = "Remove";
     remove_button.id = "remove-tag"
 
-    remove_button.addEventListener("click", () => {
-        list_item.remove();
-    });
-
     list_item.appendChild(hidden_input);
     list_item.appendChild(tag_text);
     list_item.appendChild(remove_button);
@@ -68,4 +66,4 @@ function addTag() {
     tag_input.focus();
 }
 
-add_tag_button.addEventListener("click", addTag);
+add_tag_button.addEventListener("click", () => addTag());

@@ -1,9 +1,11 @@
 [
-	{
-		"id": "1",
-		"name": "SKS Loadout",
-		"tags": ["Recon"],
-		"items": [
+    {
+        "id": "1",
+        "name": "SKS Loadout",
+        "tags": [
+            "Recon"
+        ],
+        "items": [
             {
                 "category": "primaryWeapon",
                 "name": "SKS"
@@ -17,21 +19,23 @@
                 "name": "Basic Parachute"
             }
         ],
-		"performance": {
-			"kills": 3,
-			"assists": 12,
-			"downs": 2,
-			"revives": 1,
-			"moneyEarned": 4000,
-			"minutesSurvived": 22
-		},
-		"cost": 2900,
-		"profit": 1100
-	},
-	{
+        "performance": {
+            "kills": 3,
+            "assists": 12,
+            "downs": 2,
+            "revives": 1,
+            "moneyEarned": 4000,
+            "minutesSurvived": 22
+        },
+        "cost": 2900,
+        "profit": 1100
+    },
+    {
         "id": "2",
         "name": "Medic Loadout",
-        "tags": ["Medic"],
+        "tags": [
+            "Medic"
+        ],
         "items": [
             {
                 "category": "primaryWeapon",
@@ -65,32 +69,36 @@
         "cost": 4500,
         "profit": 17500
     },
-	{
-		"id": "3",
-		"name": "Helicopter Loadout",
-		"tags": ["Pilot"],
-		"items": [
+    {
+        "id": "3",
+        "name": "Helicopter Loadout",
+        "tags": [
+            "Pilot"
+        ],
+        "items": [
             {
                 "category": "vehicles",
                 "name": "AH-6R [Rockets]"
             }
         ],
-		"performance": {
-			"kills": 9,
-			"assists": 1,
-			"downs": 1,
-			"revives": 0,
-			"moneyEarned": 12000,
-			"minutesSurvived": 10
-		},
-		"cost": 12500,
-		"profit": -500
-	},
-	{
-		"id": "4",
-		"name": "Scout Loadout",
-		"tags": ["Recon"],
-		"items": [
+        "performance": {
+            "kills": 9,
+            "assists": 1,
+            "downs": 1,
+            "revives": 0,
+            "moneyEarned": 12000,
+            "minutesSurvived": 10
+        },
+        "cost": 12500,
+        "profit": -500
+    },
+    {
+        "id": "4",
+        "name": "Scout Loadout",
+        "tags": [
+            "Recon"
+        ],
+        "items": [
             {
                 "category": "equipment",
                 "name": "Range Finder"
@@ -100,15 +108,15 @@
                 "name": "Basic Parachute"
             }
         ],
-		"performance": {
-			"kills": 0,
-			"assists": 22,
-			"downs": 0,
-			"revives": 0,
-			"moneyEarned": 18000,
-			"minutesSurvived": 70
-		},
-		"cost": 500,
-		"profit": 17500
-	}
+        "performance": {
+            "kills": 0,
+            "assists": 22,
+            "downs": 0,
+            "revives": 0,
+            "moneyEarned": 18000,
+            "minutesSurvived": 70
+        },
+        "cost": 500,
+        "profit": 17500
+    }
 ]

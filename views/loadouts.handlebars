@@ -1,1 +1,6 @@
-<h1 id="loadouts_header">YOUR LOADOUTS</h1>
+<h1 id="loadouts-header">YOUR LOADOUTS</h1>
+<p id="loadouts-sub">Track your loadouts to determine what works best for you!</p>
+
+{{#each db}}
+    {{> loadout-details}}
+{{/each}}

@@ -1,13 +1,27 @@
 <script src="/js/tags.js" defer></script>
-<script src="/js/edit-loadout.js" defer></script>
 <script src="/js/selected-items.js" defer></script>
+<script src="/js/edit-loadout.js" defer></script>
 
-<form action="/loadouts" method="POST" class="edit-loadout">
+<script id="loadout-data" type="application/json">
+    {{{loadoutJson}}}
+</script>
+
+<form
+    action="{{#if isEditing}}/loadouts/{{loadout.id}}/edit{{else}}/loadouts{{/if}}"
+    method="POST"
+    class="edit-loadout"
+>
     <!--
         NAME
     -->
     <section id="loadout-name">
-        <input type="text" name="name" placeholder="Enter Loadout Name..." required>
+        <input
+            type="text"
+            name="name"
+            value="{{loadout.name}}"
+            placeholder="Enter Loadout Name..."
+            required
+        >
     </section>
 
     <!--
@@ -20,9 +34,7 @@
             <button type="button" id="add-tag">+</button>
         </div>
 
-        <div id="loadout-tags-right">
-            <ul id="tag-list"></ul>
-        </div>
+        <ul id="tag-list"></ul>
     </section>
 
     <!--
@@ -116,35 +128,35 @@
         <h1>PERFORMANCE</h1>
         <label>
             Kills
-            <input type="number" id="kills-input" name="kills" value="0">
+            <input type="number" id="kills-input" name="kills" value="{{#if isEditing}}{{loadout.performance.kills}}{{else}}0{{/if}}">
         </label>
 
         <label>
             Assists
-            <input type="number" id="assists-input" name="assists" value="0">
+            <input type="number" id="assists-input" name="assists" value="{{#if isEditing}}{{loadout.performance.assists}}{{else}}0{{/if}}">
         </label>
 
         <label>
             Downs
-            <input type="number" id="downs-input" name="downs" value="0">
+            <input type="number" id="downs-input" name="downs" value="{{#if isEditing}}{{loadout.performance.downs}}{{else}}0{{/if}}">
         </label>
         
         <label>
             Revives
-            <input type="number" id="revives-input" name="revives" value="0">
+            <input type="number" id="revives-input" name="revives" value="{{#if isEditing}}{{loadout.performance.revives}}{{else}}0{{/if}}">
         </label>
 
         <label>
             Money Earned
-            <input type="number" id="money-earned-input" name="money-earned" value="0">
+            <input type="number" id="money-earned-input" name="money-earned" value="{{#if isEditing}}{{loadout.performance.moneyEarned}}{{else}}0{{/if}}">
         </label>
 
         <label>
             Minutes Survived
-            <input type="number" id="mins-survived-input" name="mins-survived" value="0">
+            <input type="number" id="mins-survived-input" name="mins-survived" value="{{#if isEditing}}{{loadout.performance.minutesSurvived}}{{else}}0{{/if}}">
         </label>
     </section>
 
-    <p>CAUTION: Saving will overwrite all pre-existing loadout information</p>
+    <p>CAUTION: Saving will overwrite this loadouts pre-existing information</p>
     <button type="submit" class="save-loadout">SAVE LOADOUT</button>
 </form>

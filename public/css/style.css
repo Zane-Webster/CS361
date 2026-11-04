@@ -53,8 +53,8 @@ ul {
     right: 2vw;
 }
 
-#loadouts_header {
-    margin-top: 10vh;
+.bold {
+    font-weight: bold;
 }
 
 /*==========================
@@ -114,6 +114,83 @@ nav #nav-title {
     top: 1.33vh;
 
     font-weight: bold;
+}
+
+/*==========================
+
+    LOADOUTS PAGE
+
+==========================*/
+
+#loadouts-header {
+    margin-top: 8.5vh;
+}
+
+#loadouts-sub {
+    margin-top: -1.5vh;
+    margin-bottom: 3vh;
+    font-size: 1.0vw;
+}
+
+.loadout-details {
+    display: flex;
+    align-items: stretch;
+    gap: 2vw;
+    width: 90vw;
+    margin-left: 5vw;
+}
+
+.loadout-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    margin-bottom: 1.5vw;
+    gap: 0.15vw;
+    flex: 1;
+}
+
+.loadout-stats div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #666;
+    border: 3px solid #222;
+    padding: 0.5vw;
+
+    font-size: 1.2vw;
+    text-align: center;
+}
+
+.loadout-details form {
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.loadout-details a,
+.loadout-details form button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #666;
+    border: 2px solid #222;
+
+    margin-bottom: 1.5vw;
+
+    width: 6vw;
+    text-decoration: none;
+    color: #ad6;
+    font-size: 1.2vw;
+
+    font-family: inherit;
+    cursor: pointer;
+}
+
+.loadout-details a:hover,
+.loadout-details form button:hover {
+    background-color: #888;
 }
 
 /*==========================
