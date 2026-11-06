@@ -54,17 +54,45 @@ app.use(express.json());
 /*=======================
     GET ROUTES
 =======================*/
-app.get("/", (req, res) => {
+app.get("/", async (req, res) => {
     var json = fs.readFileSync('./data/loadouts.json', 'utf8');
     loadoutsData = JSON.parse(json);
 
+    const avgKills = await sendRequest({
+        data: loadoutsData,
+        operation: "average",
+        field: "performance.kills"
+    }, "statistics")
+
+    const avgProfit = await sendRequest({
+        data: loadoutsData,
+        operation: "average",
+        field: "profit"
+    }, "statistics")
+
+    const avgCost = await sendRequest({
+        data: loadoutsData,
+        operation: "average",
+        field: "cost"
+    }, "statistics")
+
+    const avgEarned = await sendRequest({
+        data: loadoutsData,
+        operation: "average",
+        field: "performance.moneyEarned"
+    }, "statistics")
+
     res.render("loadouts", {
         title: "Loadouts",
-        db: loadoutsData
+        db: loadoutsData,
+        avgKills: avgKills.result,
+        avgProfit: avgProfit.result,
+        avgCost: avgCost.result,
+        avgEarned: avgEarned.result
     });
 });
 
-app.get("/loadouts", (req, res) => {
+app.get("/loadouts", async (req, res) => {
     var json = fs.readFileSync('./data/loadouts.json', 'utf8');
     loadoutsData = JSON.parse(json);
 

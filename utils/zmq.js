@@ -2,7 +2,7 @@ const zmq = require("zeromq");
 
 const microservices = new Map();
 
-microservices.set("receiver", 5555);
+microservices.set("statistics", 5559);
 
 async function sendRequest(data, microservice) {
     const socket = new zmq.Request();

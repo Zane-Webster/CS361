@@ -1,6 +1,14 @@
 <h1 id="loadouts-header">YOUR LOADOUTS</h1>
 <p id="loadouts-sub">Track your loadouts to determine what works best for you!</p>
+<a href="/loadouts/add" id="add-loadout-button">ADD LOADOUT</a>
 
 {{#each db}}
     {{> loadout-details}}
 {{/each}}
+
+<div class="loadout-averages">
+    <div>Average Profit: {{avgProfit}}</div>
+    <div>Average Kills: {{avgKills}}</div>
+    <div>Average Cost: {{avgCost}}</div>
+    <div>Average Earned: {{avgEarned}}</div>
+</div>

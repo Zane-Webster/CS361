@@ -2,14 +2,14 @@ const { spawn } = require('child_process');
 const path = require('path');
 
 const microservices_paths = [
-    "../microservices/receiver.js"
+    "../microservices/statistics.py"
 ]
 
 function startMicroservices() {
     for (const microservice of microservices_paths) {
         const service_path = path.resolve(__dirname, microservice);
         
-        const process = spawn("node", [service_path], {
+        const process = spawn("python", [service_path], {
             stdio: "inherit"
         });
 
