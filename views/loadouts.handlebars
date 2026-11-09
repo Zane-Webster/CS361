@@ -2,6 +2,8 @@
 <p id="loadouts-sub">Track your loadouts to determine what works best for you!</p>
 <a href="/loadouts/add" id="add-loadout-button">ADD LOADOUT</a>
 
+<input type="text" id="loadout-search" placeholder="Search loadouts...">
+
 {{#each db}}
     {{> loadout-details}}
 {{/each}}
@@ -12,3 +14,5 @@
     <div>Average Cost: {{avgCost}}</div>
     <div>Average Earned: {{avgEarned}}</div>
 </div>
+
+<script src="/js/search-loadouts.js" defer></script>

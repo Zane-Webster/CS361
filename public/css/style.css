@@ -122,6 +122,10 @@ nav #nav-title {
 
 ==========================*/
 
+/*
+// Add Loadout Button
+*/
+
 #add-loadout-button {
     position: fixed;
     justify-content: center;
@@ -148,6 +152,10 @@ nav #nav-title {
     background-color: #888;
 }
 
+/*
+// Text
+*/
+
 #loadouts-header {
     margin-top: 8.5vh;
 }
@@ -157,6 +165,21 @@ nav #nav-title {
     margin-bottom: 3vh;
     font-size: 1.0vw;
 }
+
+/*
+// Search Bar
+*/
+
+#loadout-search {
+    width: 70vw;
+    height: 4vh;
+    font-size: 1vw;
+    margin-bottom: 2vh;
+}
+
+/*
+// Loadout Details
+*/
 
 .loadout-details {
     display: flex;
@@ -218,6 +241,10 @@ nav #nav-title {
 .loadout-details form button:hover {
     background-color: #888;
 }
+
+/*
+// Averages
+*/
 
 .loadout-averages {
     display: grid;

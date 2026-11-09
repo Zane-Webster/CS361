@@ -1,4 +1,4 @@
-<div class="loadout-details">
+<div class="loadout-details" data-name="{{name}}">
     <div class="loadout-stats">
         <div class="bold">{{name}}</div>
         <div>Kills: {{performance.kills}}</div>
@@ -12,6 +12,8 @@
     </div>
 
     <a class="loadout-edit" href="/loadouts/{{id}}/edit">EDIT</a>
+
+    <a class="loadout-edit" href="/loadouts/{{id}}/statistics">STATS</a>
 
     <form action="/loadouts/{{id}}/delete" method="POST" onsubmit="return confirm('Are you sure you want to delete this loadout?');">
         <button type="submit" class="loadout-delete">DELETE</button>
