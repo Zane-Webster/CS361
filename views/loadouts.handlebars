@@ -4,6 +4,8 @@
 
 <input type="text" id="loadout-search" placeholder="Search loadouts...">
 
+<p id="no-results" style="display: none;">No loadouts found.</p>
+
 {{#each db}}
     {{> loadout-details}}
 {{/each}}
