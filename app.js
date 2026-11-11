@@ -158,6 +158,29 @@ app.get("/loadouts/:id/edit", (req, res) => {
     });
 });
 
+app.get("/loadouts/:id1/:id2/compare", (req, res) => {
+    const json = fs.readFileSync('./data/loadouts.json', 'utf8');
+    const loadouts = JSON.parse(json);
+
+    const { id1, id2 } = req.params;
+
+    const loadout1 = loadouts.find(l => l.id === id1);
+    const loadout2 = loadouts.find(l => l.id === id2);
+
+    if (!loadout1 || !loadout2) {
+        return res.status(404).send("Loadout not found");
+    }
+
+    res.render("compare", {
+        title: "Loadout Comparison",
+        ...loadoutFormData,
+        loadout1: loadout1,
+        loadout2: loadout2,
+        loadout1Json: JSON.stringify(loadout1).replace(/</g, "\\u003c"),
+        loadout2Json: JSON.stringify(loadout2).replace(/</g, "\\u003c")
+    });
+});
+
 /*=======================
     POST ROUTES
 =======================*/

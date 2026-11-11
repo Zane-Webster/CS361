@@ -228,6 +228,9 @@ nav #nav-title {
 
     margin-bottom: 1.5vw;
 
+    margin-left: -0.7vw;
+    margin-right: -0.7vw;
+
     width: 6vw;
     text-decoration: none;
     color: #ad6;
@@ -240,6 +243,15 @@ nav #nav-title {
 .loadout-details a:hover,
 .loadout-details form button:hover {
     background-color: #888;
+}
+
+/*
+// Compare
+*/
+
+.loadout-edit.selected {
+    background-color: #999;
+    border-color: #ad6;
 }
 
 /*
@@ -491,4 +503,70 @@ nav #nav-title {
 
 .save-loadout:active {
     background-color: #999;
+}
+
+/*==========================
+
+    COMPARISON PAGE
+
+==========================*/
+
+#compare {
+    position: fixed;
+    border: 5px solid #222; 
+    background-color: #444;
+}
+
+.comparison-loadout {
+    position: fixed;
+    display: grid;
+
+    border: 5px solid #222; 
+    background-color: #444;
+
+    bottom: 2vh;
+    width: 30vw;
+    height: 90vh;
+}
+
+.comparison-loadout h2,
+#loadout-comparison h2 {
+    font-size: 1.8vw;
+}
+
+.comparison-loadout p,
+#loadout-comparison p {
+    font-size: 1.2vw;
+}
+
+#comparison-loadout-1 {
+    left: 3vw;
+}
+
+#loadout-comparison {
+    position: fixed;
+    display: grid;
+
+    border: 5px solid #222; 
+    background-color: #444;
+
+    left: 35vw;
+    bottom: 2vh;
+    width: 30vw;
+    height: 90vh;
+}
+
+.compare-value {
+    display: inline-block;
+    width: 7vw;
+    text-align: center;
+    border: 3px solid #222;
+}
+
+.compare-value.selected {
+    background-color: #666;
+}
+
+#comparison-loadout-2 {
+    right: 3vw;
 }

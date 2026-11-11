@@ -1,0 +1,71 @@
+<div id="compare">   
+    <div class="comparison-loadout" id="comparison-loadout-1">
+        <h2>{{loadout1.name}}</h2>
+        <p>Kills: {{loadout1.performance.kills}}</p>
+        <p>Assists: {{loadout1.performance.assists}}</p>
+        <p>Downs: {{loadout1.performance.downs}}</p>
+        <p>Revives: {{loadout1.performance.revives}}</p>
+        <p>Minutes Survived: {{loadout1.performance.minutesSurvived}}m</p>
+        <p>Money Earned: ${{loadout1.performance.moneyEarned}}</p>
+        <p>Cost: ${{loadout1.cost}}</p>
+        <p>Profit: ${{loadout1.profit}}</p>
+    </div>
+
+    <div id="loadout-comparison">
+        <h2>COMPARISON</h2>
+        <p class="compare-stat" better="higher">
+            <span class="compare-value">{{loadout1.performance.kills}}</span>
+             | 
+            <span class="compare-value">{{loadout2.performance.kills}}</span>
+        </p>
+        <p class="compare-stat" better="higher">
+            <span class="compare-value">{{loadout1.performance.assists}}</span>
+             | 
+            <span class="compare-value">{{loadout2.performance.assists}}</span>
+        </p>
+        <p class="compare-stat" better="lower">
+            <span class="compare-value">{{loadout1.performance.downs}}</span>
+             | 
+            <span class="compare-value">{{loadout2.performance.downs}}</span>
+        </p>
+        <p class="compare-stat" better="higher">
+            <span class="compare-value">{{loadout1.performance.revives}}</span>
+             | 
+            <span class="compare-value">{{loadout2.performance.revives}}</span>
+        </p>
+        <p class="compare-stat" better="higher">
+            <span class="compare-value">{{loadout1.performance.minutesSurvived}}m</span>
+             | 
+            <span class="compare-value">{{loadout2.performance.minutesSurvived}}m</span>
+        </p>
+        <p class="compare-stat" better="higher">
+            <span class="compare-value">${{loadout1.performance.moneyEarned}}</span>
+             | 
+            <span class="compare-value">${{loadout2.performance.moneyEarned}}</span>
+        </p>
+        <p class="compare-stat" better="lower">
+            <span class="compare-value">${{loadout1.cost}}</span>
+             | 
+            <span class="compare-value">${{loadout2.cost}}</span>
+        </p>
+        <p class="compare-stat" better="higher">
+            <span class="compare-value">${{loadout1.profit}}</span>
+             | 
+            <span class="compare-value">${{loadout2.profit}}</span>
+        </p>
+    </div>
+
+    <div class="comparison-loadout" id="comparison-loadout-2">
+        <h2>{{loadout2.name}}</h2>
+        <p>Kills: {{loadout2.performance.kills}}</p>
+        <p>Assists: {{loadout2.performance.assists}}</p>
+        <p>Downs: {{loadout2.performance.downs}}</p>
+        <p>Revives: {{loadout2.performance.revives}}</p>
+        <p>Minutes Survived: {{loadout2.performance.minutesSurvived}}m</p>
+        <p>Money Earned: ${{loadout2.performance.moneyEarned}}</p>
+        <p>Cost: ${{loadout2.cost}}</p>
+        <p>Profit: ${{loadout2.profit}}</p>
+    </div>
+</div>
+
+<script src="/js/compare-loadout-stats.js" defer></script>
